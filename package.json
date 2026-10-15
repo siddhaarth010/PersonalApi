@@ -1,0 +1,52 @@
+{
+  "name": "personal-api",
+  "version": "1.0.0",
+  "description": "The Operating System for Your Life — a self-hosted API that aggregates your personal data",
+  "type": "module",
+  "bin": {
+    "me": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dashboard\"",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dashboard": "cd dashboard && npm run dev",
+    "seed": "tsx src/seed.ts",
+    "me": "tsx src/cli/index.ts"
+  },
+  "keywords": [
+    "personal-api",
+    "life-dashboard",
+    "quantified-self"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/pdfkit": "^0.17.6",
+    "better-sqlite3": "^13.0.3",
+    "chalk": "^6.0.1",
+    "cli-table3": "^0.6.5",
+    "commander": "^15.0.0",
+    "cors": "^2.8.6",
+    "date-fns": "^4.4.0",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "node-cron": "^4.6.0",
+    "pdfkit": "^0.20.2",
+    "telegraf": "^4.16.3",
+    "uuid": "^14.0.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@types/node-cron": "^3.0.11",
+    "@types/uuid": "^10.0.0",
+    "concurrently": "^10.0.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,269 @@
+/* App-specific styles (supplements index.css design system) */
+
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+.syncing {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Greeting section */
+.greeting-section h2 {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom tooltip styling */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+/* Override default Vite styles */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Personal SLA Widget */
+.sla-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sla-status-badge.operational {
+  background: rgba(85, 239, 196, 0.15);
+  color: #55efc4;
+  border: 1px solid rgba(85, 239, 196, 0.3);
+}
+
+.sla-status-badge.degraded {
+  background: rgba(255, 234, 167, 0.15);
+  color: #ffeaa7;
+  border: 1px solid rgba(255, 234, 167, 0.3);
+}
+
+.sla-status-badge.outage {
+  background: rgba(255, 118, 117, 0.15);
+  color: #ff7675;
+  border: 1px solid rgba(255, 118, 117, 0.3);
+}
+
+.sla-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.sla-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+
+.sla-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-medium);
+}
+
+.sla-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.sla-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sla-pct {
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.sla-desc {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.sla-bar-bg {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.sla-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+.sla-bar-fill.operational { background: #55efc4; }
+.sla-bar-fill.degraded { background: #ffeaa7; }
+.sla-bar-fill.outage { background: #ff7675; }
+
+/* Secondary Connectors Grid */
+.telemetry-pills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.telemetry-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.2s ease;
+}
+
+.telemetry-pill:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-medium);
+}
+
+.telemetry-pill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.telemetry-pill-info h4 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.telemetry-pill-info p {
+  margin: 2px 0 0 0;
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+
+/* Phase 5: Cognitive Energy & Archaeology */
+.energy-arch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.energy-meter-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meter-score {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.meter-badge {
+  padding: 3px 8px;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.meter-badge.optimal { background: rgba(85, 239, 196, 0.15); color: #55efc4; border: 1px solid rgba(85, 239, 196, 0.3); }
+.meter-badge.moderate { background: rgba(255, 234, 167, 0.15); color: #ffeaa7; border: 1px solid rgba(255, 234, 167, 0.3); }
+.meter-badge.high { background: rgba(255, 118, 117, 0.15); color: #ff7675; border: 1px solid rgba(255, 118, 117, 0.3); }
+
+.energy-balance-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.filler-tag {
+  background: rgba(85, 239, 196, 0.12);
+  color: #55efc4;
+  border: 1px solid rgba(85, 239, 196, 0.25);
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.drain-tag {
+  background: rgba(255, 118, 117, 0.12);
+  color: #ff7675;
+  border: 1px solid rgba(255, 118, 117, 0.25);
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.memory-capsule-card {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.memory-item {
+  border-left: 2px solid #f59e0b;
+  padding-left: 12px;
+  margin-top: 10px;
+}
+
